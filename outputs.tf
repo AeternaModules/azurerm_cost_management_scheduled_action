@@ -1,3 +1,7 @@
+output "cost_management_scheduled_actions_id" {
+  description = "Map of id values across all cost_management_scheduled_actions, keyed the same as var.cost_management_scheduled_actions"
+  value       = { for k, v in azurerm_cost_management_scheduled_action.cost_management_scheduled_actions : k => v.id }
+}
 output "cost_management_scheduled_actions_day_of_month" {
   description = "Map of day_of_month values across all cost_management_scheduled_actions, keyed the same as var.cost_management_scheduled_actions"
   value       = { for k, v in azurerm_cost_management_scheduled_action.cost_management_scheduled_actions : k => v.day_of_month }
